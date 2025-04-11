@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Profile</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            color: #333;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            text-align: center;
+        }
+        
+        .job-title {
+            font-size: 1.8em;
+            margin: 30px 0;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .rotate {
+            display: inline-block;
+            min-width: 220px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            padding: 0 5px;
+        }
+        
+        .bio {
+            margin: 30px 0;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+        
+        .viz-section {
+            margin: 50px 0;
+        }
+        
+        .viz-section h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .viz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .viz-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .viz-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .viz-gif {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .viz-desc {
+            padding: 20px;
+        }
+        
+        .viz-desc h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        .viz-desc p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+            
+            .viz-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello, I'm Marian</h1>
+        
+        <div class="job-title">
+            I am a <span class="rotate">ML Engineer</span>.
+        </div>
+        
+        <div class="bio">
+            <p>Welcome to my professional portfolio. I specialize in building intelligent systems and extracting insights from complex data.</p>
+            <p>With expertise in machine learning, artificial intelligence, and data science, I help organizations transform their data into actionable solutions.</p>
+        </div>
+        
+        <div class="viz-section">
+            <h2>Data Visualizations in Motion</h2>
+            
+            <div class="viz-grid">
+                <div class="viz-card">
+                    <img src="https://media.giphy.com/media/Lp5wuqMOmLUaHzMpHi/giphy.gif" alt="Neural Network Training" class="viz-gif">
+                    <div class="viz-desc">
+                        <h3>Model Training</h3>
+                        <p>Visualization of neural network training process showing loss convergence over epochs.</p>
+                    </div>
+                </div>
+                
+                <div class="viz-card">
+                    <img src="https://media.giphy.com/media/3o6Zt6ML6BklcajjsA/giphy.gif" alt="Data Clustering" class="viz-gif">
+                    <div class="viz-desc">
+                        <h3>Clustering Algorithm</h3>
+                        <p>K-means clustering animation demonstrating how centroids move to optimize groupings.</p>
+                    </div>
+                </div>
+                
+                <div class="viz-card">
+                    <img src="https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif" alt="Feature Importance" class="viz-gif">
+                    <div class="viz-desc">
+                        <h3>Feature Analysis</h3>
+                        <p>Animated feature importance chart showing relative weights in a predictive model.</p>
+                    </div>
+                </div>
+                
+                <div class="viz-card">
+                    <img src="https://media.giphy.com/media/paTz7UZbPfTZFRYnnB/giphy.gif" alt="Data Processing" class="viz-gif">
+                    <div class="viz-desc">
+                        <h3>Data Pipeline</h3>
+                        <p>Flowchart animation of raw data transforming through preprocessing stages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            &copy; <span id="year"></span> Marian Adewale. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        // Rotating job titles
+        const titles = ["ML Engineer", "Python Developer", "Data Scientist", "Deep Learning Specialist"];
+        let currentIndex = 0;
+        const element = document.querySelector('.rotate');
+        
+        function rotateTitle() {
+            currentIndex = (currentIndex + 1) % titles.length;
+            element.textContent = titles[currentIndex];
+            
+            // Change gradient with each rotation
+            const gradients = [
+                "linear-gradient(90deg, #667eea, #764ba2)",
+                "linear-gradient(90deg, #ff758c, #ff7eb3)",
+                "linear-gradient(90deg, #43cea2, #185a9d)",
+                "linear-gradient(90deg, #ff9966, #ff5e62)"
+            ];
+            element.style.backgroundImage = gradients[currentIndex];
+        }
+        
+        setInterval(rotateTitle, 2000); // Change every 2 seconds
+        
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
